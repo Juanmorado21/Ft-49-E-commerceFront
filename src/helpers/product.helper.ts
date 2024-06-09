@@ -17,14 +17,15 @@ export async function getProductsDB (){
     }
 }
 
-export async function getProducts(){
+export const getProducts = async (): Promise<IProduct[]> => {
     try {
-        const ProductsDB = await getProductsDB();
-        return ProductsDB;
-    } catch (error: any){
-        throw new Error(error)
+        // Suponiendo que `getProductsDB` es una función que obtiene los productos de la base de datos.
+        const productsDB: IProduct[] = await getProductsDB();
+        return productsDB;
+    } catch (error: any) {
+        throw new Error('Error al obtener los productos: ' + error.message);
     }
-}
+};
 
 export async function getProductById(id: string){
     try {

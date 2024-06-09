@@ -1,15 +1,11 @@
-"use client"
 import HomePage from "@/components/home/Home";
-import React from "react";
+import { getProducts } from "@/helpers/product.helper";
+import { IProduct } from "../../types";
 
+const Home = async () => {
+    const products: IProduct[] = await getProducts();
 
-const Home = ()=> {
-    
-    return (
-        <div className="my-32 flex  flex-col items-center justify-center"> 
-            <HomePage />
-        </div>
-    )
-}
+    return <HomePage products={products} />;
+};
 
 export default Home;
