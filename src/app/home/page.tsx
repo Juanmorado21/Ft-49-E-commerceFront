@@ -3,7 +3,7 @@ import HomePage from "@/components/home/Home";
 import React from "react";
 
 
-const Home =  async()=> {
+const Home = ()=> {
     
     return (
         <div className="my-32 flex  flex-col items-center justify-center"> 

@@ -21,7 +21,7 @@ const DetailProduct =  ({ params } : {params: {productId: string}}) => {
             const userToken = localStorage.getItem("userSession");
             setUserSession(JSON.parse(userToken!)) 
         }
-    }, [])
+    }, [params.productId]);
 
     console.log(userSession, product)
 
